@@ -275,49 +275,50 @@ def email():
     for mail in emails:
         print(mail)
 
-# Menu
+try:
+    while True:
+        command = input('Secure: ')
 
-while True:
-    command = input('Secure: ')
-
-    if command == 'help':
-        print('''
-        help    -->    Get help
-        menu    -->    Show what's on the menu
-        clear   -->    Clear the screen
-        exit    -->    Exit the program
-        ''')
-    elif command == 'menu':
-        print('''
-        Select Program:
-        ---------------
-        1. Hash Decrypter
-        2. Password Generator
-        3. Password Strength Checker
-        4. SSH Brute Forcer
-        5. Email collector
-        6. Back
-        ''')
-        while True:
-            ans = input('Select a number: ')
-            if ans == '1':
-                hash_decrypter()
-            elif ans == '2':
-                generator()
-            elif ans == '3':
-                checker()
-            elif ans == '4':
-                ssh()
-            elif ans == '5':
-                email()
-            elif ans == '6':
-                break
-            else:
-                print('This option does not exist')
-    elif command == 'clear':
-        os.system('clear')
-    elif command == 'exit':
-        print('Good bye')
-        exit()
-    else:
-        print('This command does not exist, type help to get more information')
+        if command == 'help':
+            print('''
+            help    -->    Get help
+            menu    -->    Show what's on the menu
+            clear   -->    Clear the screen
+            exit    -->    Exit the program
+            ''')
+        elif command == 'menu':
+            print('''
+            Select Program:
+            ---------------
+            1. Hash Decrypter
+            2. Password Generator
+            3. Password Strength Checker
+            4. SSH Brute Forcer
+            5. Email collector
+            6. Back
+            ''')
+            while True:
+                ans = input('Select a number: ')
+                if ans == '1':
+                    hash_decrypter()
+                elif ans == '2':
+                    generator()
+                elif ans == '3':
+                    checker()
+                elif ans == '4':
+                    ssh()
+                elif ans == '5':
+                    email()
+                elif ans == '6':
+                    break
+                else:
+                    print('This option does not exist')
+        elif command == 'clear':
+            os.system('clear')
+        elif command == 'exit':
+            print('Good bye')
+            exit()
+        else:
+            print('This command does not exist, type help to get more information')
+except KeyboardInterrupt:
+    print("\n\n[-] Detected CTRL + C ..... Quitting\n")
